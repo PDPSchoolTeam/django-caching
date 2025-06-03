@@ -4,7 +4,7 @@ from django.shortcuts import render
 from app.models import Address
 
 
-# @cache_page(60 * 2)  # Ushbu view 2 daqiqaga keshlanadi # noqa
+@cache_page(60 * 2)  # Ushbu view 2 daqiqaga keshlanadi # noqa
 def address_list(requests):
     addresses = Address.objects.all()
     return render(requests, 'home.html', {'addresses': addresses})
