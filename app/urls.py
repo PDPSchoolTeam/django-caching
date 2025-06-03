@@ -1,6 +1,6 @@
 from django.urls import path
-from app.views import index
+from app.views import address_list
 
 urlpatterns = [
-    path("", index)
+    path('addresses/', address_list, name='address_list'),
 ]

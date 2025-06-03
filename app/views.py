@@ -1,8 +1,10 @@
 from django.views.decorators.cache import cache_page
-from django.http import HttpResponse
+from django.shortcuts import render
+
+from app.models import Address
 
 
-@cache_page(60 * 2)  # Ushbu view 2 daqiqaga keshlanadi # noqa
-def index(requests):
-    # View logical
-    return HttpResponse("<h1> Welcome to Home page! </h1>")
+# @cache_page(60 * 2)  # Ushbu view 2 daqiqaga keshlanadi # noqa
+def address_list(requests):
+    addresses = Address.objects.all()
+    return render(requests, 'home.html', {'addresses': addresses})
