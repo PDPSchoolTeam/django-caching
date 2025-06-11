@@ -14,3 +14,5 @@ class Command(BaseCommand):
 
         self.stdout.write(self.style.SUCCESS(f'Active users count: {active_users_count}'))
         logger.info(f'Active users counted: {active_users_count}')
+
+    # python manage.py get_product
